@@ -48,10 +48,9 @@
         <div class="spacer-30"></div>
         <div class="column m2" id="wrapper">
             <div id="album">
-                <div id="cover">
-                    <div id="print">
-                    </div>
-                </div>
+                <a href="https://johannesklingebiel.de" target="_blank" id="cover">
+                    <div id="print"></div>
+                </a>
                 <div id="vinyl">
                     <div id="print">
                     </div>
@@ -93,8 +92,9 @@
         }
     }
 
-    document.addEventListener('pointerdown', e => {
+    document.body.addEventListener('pointerdown', e => {
         shootParticles(e.clientX, e.clientY);
+        // Kein preventDefault, kein stopPropagation!
     });
 </script>
 </html>
