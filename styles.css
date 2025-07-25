@@ -1,0 +1,57 @@
+:root {
+    --text-color: #000000;
+    --yellow: #ffe800;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    /* background-color: var(--yellow); */
+    width: 100vw;
+    height: 100vh;
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--yellow) 0px,
+        var(--yellow) 30px,
+        transparent 30px,
+        transparent 60px
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 80vw;
+    transform: rotate(-5deg);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SPACER */
+.p2 {
+    padding: 2rem;
+}
+
+.p1 {
+    padding: 1rem;
+}
+
+.m2 {
+    margin: 2rem;
+}
+
+.m1 {
+    margin: 1rem;
+}
+
+/* TYPOGRAPHY */
