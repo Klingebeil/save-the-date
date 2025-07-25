@@ -1,17 +1,31 @@
 :root {
     --text-color: #000000;
     --yellow: #ffe800;
+    --ticket-bg: #ffe1ae;
+
+    @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('fonts/JetBrainsMono-MediumItalic.woff2') format('woff2');
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Roca';
+        src: url('fonts/Roca-Regular.otf') format('otf');
+    }
 }
 
 body {
     margin: 0;
     padding: 0;
-}
-
-#header {
-    /* background-color: var(--yellow); */
-    width: 100vw;
-    height: 100vh;
     background-image: repeating-linear-gradient(
         to right,
         var(--yellow) 0px,
@@ -19,6 +33,13 @@ body {
         transparent 30px,
         transparent 60px
     );
+    font-size: 1em;
+}
+
+#header {
+    /* background-color: var(--yellow); */
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,11 +49,23 @@ body {
 #logo {
     width: 80vw;
     transform: rotate(-5deg);
+    transition: width 0.3s ease;
+}
+
+#logo:hover {
+    width: 85vw;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -54,4 +87,239 @@ body {
     margin: 1rem;
 }
 
+.mt2 {
+    margin-top: 2rem;
+}
+
+.spacer-30 {height: 300px}
+.spacer-20 {height: 200px}
+
 /* TYPOGRAPHY */
+.monospace {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.roca {
+    font-family: 'Roca', sans-serif;
+}
+
+.centered {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* TICKET */
+.ticket{
+    width:50vw;
+    max-width: 750px;
+    padding:40px;
+    margin:50px auto;
+    background: var(--ticket-bg);
+    position:relative;
+    transform: rotate(2deg);
+    box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.02),
+    0px 2px 4px rgba(3, 7, 18, 0.03),
+    0px 4px 9px rgba(3, 7, 18, 0.05),
+    0px 6px 15px rgba(3, 7, 18, 0.06),
+    0px 10px 24px rgba(3, 7, 18, 0.08);
+}
+
+.ticket::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -5px;
+    height: 16px;
+    background: radial-gradient(circle, transparent, transparent 50%, var(--ticket-bg) 50%, var(--ticket-bg) 100%) -5px -8px / 16px 16px repeat-x;
+}
+  
+.ticket::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 16px;
+    background: radial-gradient(circle, transparent, transparent 50%, var(--ticket-bg) 50%, var(--ticket-bg) 100%) -5px 8px / 16px 16px repeat-x;
+}
+
+.top-left{
+  float:left;
+}
+
+.top-center{
+  text-align:center;
+  font-size:26px;
+}
+
+.top-right{
+  float:right;
+  font-family: courier;
+}
+
+hr{
+  border:none;
+  border-bottom:1px solid #000;
+  padding-top:20px;
+}
+
+.for-the-ceremony{
+  text-align:center;
+  text-transform:uppercase;
+  margin-top:0;
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+.on-the-date{
+  font-size:8px;
+  text-transform:uppercase;
+  display:inline-block;
+  width:30%;
+  letter-spacing:2px;
+  vertical-align: bottom;
+}
+
+.ceremony-date{
+  border-bottom:1px solid #000;
+  display:inline-block;
+  width:70%;
+}
+
+.ceremony-date date{
+  color:red;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  -moz-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  display:block;
+}
+
+/* VINYL */
+
+#wrap {
+	background-color: rgba(0,0,0,0.8);	
+}
+
+#album {
+	position: relative;
+	height: 50vw;
+	width: 50vw;
+    left: -5%;
+	max-height: 75%;
+	max-width: 75vh;
+    transform: rotate(-1deg);
+    transition: transform 0.4s cubic-bezier(.61,-0.01,.42,1.01);
+}
+
+#album:hover {
+    transform: scale(1.05);
+}
+
+#cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-image: url('cover.jpg');
+	background-size: 100% 100%;
+	box-shadow: 5px 0 20px 0 rgba(0,0,0,0.6),
+	            inset 0 0 10px 5px rgba(255,255,255,0.2),
+			  inset 0 0 4px 2px rgba(0,0,0,0.2);
+	border-radius: 4px;
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+		background-image: url('http://i.imgur.com/i0fMWpe.jpg');
+		background-size: 100% 100%;
+		border-radius: 4px;
+		mix-blend-mode: screen;
+		opacity: 0.5;
+		content: '';
+	}
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 20;
+		width: 100%;
+		height: 100%;
+		background-image: url('https://orig06.deviantart.net/0124/f/2013/136/6/7/texture_326_by_sirius_sdz-d65gs3s.jpg');
+		background-size: 100% 100%;
+		border-radius: 4px;
+		mix-blend-mode: screen;
+		opacity: 0.2;
+		content: '';
+	}
+}
+#vinyl {
+		position: absolute;
+		z-index: 0;
+        top: 5%;
+		width: 45vw;
+		height: 45vw;
+		display: block;
+		background-image: url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Music-PNG/Gramophone_Vinyl_LP_Record_PNG_Transparent_Clip_Art_Image.png?m=1462983196');
+		background-size: 106% 106%;
+		background-position: center;
+		box-shadow: 0 0 20px 4px rgba(0,0,0,0.6);
+		border-radius: 50%;
+		content: '';
+		animation: 5s linear spinThat infinite, 1s ease-out getOut 1s forwards;
+		&::before {
+			position: absolute;
+			top: 2.5%;
+			left: 2.5%;
+			z-index: 10;
+			width: 95%;
+			height: 95%;
+			background-image: url('http://www.designresourcebox.com/ths/diverse/blacktextures/82267467.jpg');
+			background-size: 100% 100%;
+			border-radius: 50%;
+			mix-blend-mode: screen;
+			opacity: 0.3;
+			content: '';
+		}
+		#print {
+			position: absolute;
+			top: 33%;
+			left: 33%;
+			height: 34%;
+			width: 34%;
+			box-shadow: inset 0 0 0 5px rgba(150,150,150,0.5);
+			background-image: url('http://assets.teamrock.com/image/14d29742-c6f7-43f6-bbe1-6bf7b3b34c6f?w=800');
+	background-size: cover;
+			border-radius: 50%;
+		}
+}
+
+@keyframes getOut {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 30%;
+	}
+}
+@keyframes spinThat {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

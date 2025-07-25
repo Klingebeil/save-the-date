@@ -5,19 +5,96 @@
     </head>
     <body>
         <div id="header">
-            <div class="m2 row">
-                <div class="p2">Wir laden dich herzlich ein</div>
-                <div class="p2">Your’re cordially Invited</div>
-                <div class="p2">Vous êtes cordialement invités</div>
+            <div class="m2 row monospace">
+                <div class="p2">Wir laden dich herzlich ein!</div>
+                <div class="p2">Your’re cordially Invited!</div>
+                <div class="p2">Vous êtes cordialement invités!</div>
             </div>
             <div id="logo">
                 <img src="logo.svg">
             </div>
-            <div class="row">
+            <div class="row monospace">
                 <div class="p2">Wir laden dich herzlich ein</div>
                 <div class="p2">Your’re cordially Invited</div>
             </div>
         </div>
-        <p>Hello</p>
+        <div class="spacer-20"></div>
+        <div class="row m2">
+            <div class="ticket">
+            <span class="top-left monospace">20</span><span class="top-right monospace">26</span>
+
+            <div class="top-center roca">
+                <span>Meike & Johannes</span>
+            </div>
+            <hr>
+            <h1 class="centered roca m2">R.S.V.P.</h1>
+            <p class="for-the-ceremony monospace m2">For the Ceremony & Reception</p>
+            <span class="on-the-date monospace">on the date:</span><span class="ceremony-date monospace"><date>08.08.2026</date></span>
+            <hr>
+            <table class="mt2">
+                <tr>
+                    <td class="monospace">12:00</td>
+                    <td class="roca">Standesamt</td>
+                    <td class="monospace">Location</td>
+                </tr>
+                <tr>
+                    <td class="monospace">18:00</td>
+                    <td class="roca">Feier</td>
+                    <td class="monospace">Location</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <div class="spacer-30"></div>
+        <div class="column m2" id="wrapper">
+            <div id="album">
+                <div id="cover">
+                    <div id="print">
+                    </div>
+                </div>
+                <div id="vinyl">
+                    <div id="print">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spacer-20"></div>
     </body>
+
+<script>
+    function shootParticles(x, y) {
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.width = '8px';
+            particle.style.height = '8px';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
+            particle.style.zIndex = 1000;
+            document.body.appendChild(particle);
+
+            const angle = Math.random() * 2 * Math.PI;
+            const distance = 200 + Math.random() * 60;
+            const dx = Math.cos(angle) * distance;
+            const dy = Math.sin(angle) * distance;
+
+            particle.animate([
+                { transform: 'translate(0,0)', opacity: 1 },
+                { transform: `translate(${dx}px,${dy}px)`, opacity: 0 }
+            ], {
+                duration: 700 + Math.random()*400,
+                easing: 'cubic-bezier(.61,-0.01,.42,1.01)'
+            });
+
+            setTimeout(() => particle.remove(), 1000);
+        }
+    }
+
+    document.addEventListener('pointerdown', e => {
+        shootParticles(e.clientX, e.clientY);
+    });
+</script>
 </html>
