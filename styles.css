@@ -2,25 +2,25 @@
     --text-color: #000000;
     --yellow: #ffe800;
     --ticket-bg: #ffe1ae;
+}
 
-    @font-face {
+@font-face {
     font-family: 'JetBrains Mono';
-    src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
     font-weight: 100;
     font-style: normal;
-    }
+}
 
-    @font-face {
+@font-face {
         font-family: 'JetBrains Mono';
-        src: url('fonts/JetBrainsMono-MediumItalic.woff2') format('woff2');
+        src: url('/fonts/JetBrainsMono-MediumItalic.woff2') format('woff2');
         font-weight: 100;
         font-style: italic;
-    }
+}
 
-    @font-face {
+@font-face {
         font-family: 'Roca';
-        src: url('fonts/Roca-Regular.otf') format('opentype');
-    }
+        src: url('/fonts/Roca-Regular.otf') format('opentype');
 }
 
 body {
