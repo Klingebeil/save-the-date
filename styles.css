@@ -59,7 +59,7 @@ body {
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -181,12 +181,12 @@ hr{
   text-align:center;
   text-transform:uppercase;
   margin-top:0;
-  font-size:0.4em;
+  font-size:0.5em;
   letter-spacing:1px;
 }
 
 .on-the-date{
-  font-size:0.4em;
+  font-size:0.5em;
   text-transform:uppercase;
   display:inline-block;
   width:30%;
