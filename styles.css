@@ -39,7 +39,7 @@ body {
 #header {
     /* background-color: var(--yellow); */
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
