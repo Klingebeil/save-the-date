@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Meike & Johannes</title>
-        <link rel="stylesheet" href="styles.css">   
+        <link rel="stylesheet" href="styles.css">  
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
     </head>
     <body>
         <div id="header">
@@ -58,43 +59,43 @@
             </div>
         </div>
         <div class="spacer-20"></div>
-    </body>
 
-<script>
-    function shootParticles(x, y) {
-        for (let i = 0; i < 30; i++) {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.left = x + 'px';
-            particle.style.top = y + 'px';
-            particle.style.width = '8px';
-            particle.style.height = '8px';
-            particle.style.borderRadius = '50%';
-            particle.style.pointerEvents = 'none';
-            particle.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
-            particle.style.zIndex = 1000;
-            document.body.appendChild(particle);
+        <script>
+            function shootParticles(x, y) {
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.left = x + 'px';
+                    particle.style.top = y + 'px';
+                    particle.style.width = '8px';
+                    particle.style.height = '8px';
+                    particle.style.borderRadius = '50%';
+                    particle.style.pointerEvents = 'none';
+                    particle.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
+                    particle.style.zIndex = 1000;
+                    document.body.appendChild(particle);
 
-            const angle = Math.random() * 2 * Math.PI;
-            const distance = 200 + Math.random() * 60;
-            const dx = Math.cos(angle) * distance;
-            const dy = Math.sin(angle) * distance;
+                    const angle = Math.random() * 2 * Math.PI;
+                    const distance = 200 + Math.random() * 60;
+                    const dx = Math.cos(angle) * distance;
+                    const dy = Math.sin(angle) * distance;
 
-            particle.animate([
-                { transform: 'translate(0,0)', opacity: 1 },
-                { transform: `translate(${dx}px,${dy}px)`, opacity: 0 }
-            ], {
-                duration: 700 + Math.random()*400,
-                easing: 'cubic-bezier(.61,-0.01,.42,1.01)'
+                    particle.animate([
+                        { transform: 'translate(0,0)', opacity: 1 },
+                        { transform: `translate(${dx}px,${dy}px)`, opacity: 0 }
+                    ], {
+                        duration: 700 + Math.random()*400,
+                        easing: 'cubic-bezier(.61,-0.01,.42,1.01)'
+                    });
+
+                    setTimeout(() => particle.remove(), 1000);
+                }
+            }
+
+            document.body.addEventListener('pointerdown', e => {
+                shootParticles(e.clientX, e.clientY);
+                // Kein preventDefault, kein stopPropagation!
             });
-
-            setTimeout(() => particle.remove(), 1000);
-        }
-    }
-
-    document.body.addEventListener('pointerdown', e => {
-        shootParticles(e.clientX, e.clientY);
-        // Kein preventDefault, kein stopPropagation!
-    });
-</script>
+        </script>
+    </body>
 </html>
