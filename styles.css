@@ -95,8 +95,8 @@ body {
     margin-top: 1rem;
 }
 
-.spacer-30 {height: 300px}
-.spacer-20 {height: 200px}
+.spacer-big {height: 6em}
+.spacer-medium {height: 4em}
 
 /* TYPOGRAPHY */
 .monospace {
