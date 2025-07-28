@@ -132,7 +132,7 @@ p {
 
 h4 {
     font-family: 'Roca', sans-serif;
-    font-size: 0.8em;
+    font-size: 1em;
     margin: 0.5em 0;
     letter-spacing: 1px;
 }
@@ -253,6 +253,8 @@ hr{
 	              #6B9192 0, #6B9192 3em, transparent 0, transparent 4em);
     
     & img {width: 30vw;}
+    & hr {border-color: #6B9192;}
+    & h4 {color: #6B9192;}
 }
 
 
@@ -369,5 +371,7 @@ hr{
     .important-info {
         max-width: 70vw;
         width: 70vw;
+
+        & img {width: 80%;}
     }
 }
