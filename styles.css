@@ -258,6 +258,20 @@ hr{
     & h4 {color: #6B9192;}
 }
 
+.important-info::before {
+    content: '';
+    position: absolute;
+    /* left: 0; */
+    right: -20%;
+    top: 20px;
+    transform: rotate(10deg);
+    background-image: url(stamp1.svg);
+    width: 30vw;
+    height: 15vh;
+    background-repeat: no-repeat;
+    mix-blend-mode: multiply;
+}
+
 
 /* VINYL */
 
@@ -272,7 +286,7 @@ hr{
     left: -5%;
 	max-height: 75%;
 	max-width: 75vh;
-    transform: rotate(-1deg);
+    transform: rotate(1deg);
     transition: transform 0.4s cubic-bezier(.61,-0.01,.42,1.01);
 }
 
@@ -309,31 +323,6 @@ hr{
 		border-radius: 50%;
 		content: '';
 		animation: 5s linear spinThat infinite, 1s ease-out getOut 1s forwards;
-		&::before {
-			position: absolute;
-			top: 2.5%;
-			left: 2.5%;
-			z-index: 10;
-			width: 95%;
-			height: 95%;
-			background-image: url('http://www.designresourcebox.com/ths/diverse/blacktextures/82267467.jpg');
-			background-size: 100% 100%;
-			border-radius: 50%;
-			mix-blend-mode: screen;
-			opacity: 0.3;
-			content: '';
-		}
-		#print {
-			position: absolute;
-			top: 33%;
-			left: 33%;
-			height: 34%;
-			width: 34%;
-			box-shadow: inset 0 0 0 5px rgba(150,150,150,0.5);
-			background-image: url('http://assets.teamrock.com/image/14d29742-c6f7-43f6-bbe1-6bf7b3b34c6f?w=800');
-	background-size: cover;
-			border-radius: 50%;
-		}
 }
 
 @keyframes getOut {
@@ -374,5 +363,9 @@ hr{
         width: 70vw;
 
         & img {width: 80%;}
+    }
+    .important-info::before {
+        right: 5%;
+        width: 50%;
     }
 }
