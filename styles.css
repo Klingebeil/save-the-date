@@ -1,7 +1,8 @@
 :root {
-    --text-color: #000000;
-    --yellow: #ffe800;
-    --ticket-bg: #ffe1ae;
+    --c-text: #000000;
+    --c-yellow: #ffe800;
+    --c-ticket-bg: #ffe1ae;
+    --c-letter: #cee2e3;
 }
 
 @font-face {
@@ -28,16 +29,17 @@ body {
     padding: 0;
     background-image: repeating-linear-gradient(
         to right,
-        var(--yellow) 0px,
-        var(--yellow) 30px,
+        var(--c-yellow) 0px,
+        var(--c-yellow) 30px,
         transparent 30px,
         transparent 60px
     );
     font-size: 1em;
+    color: var(--c-text);
 }
 
 #header {
-    /* background-color: var(--yellow); */
+    /* background-color: var(--c-yellow); */
     width: 100vw;
     height: 95vh;
     display: flex;
@@ -97,6 +99,7 @@ body {
 
 .spacer-big {height: 6em}
 .spacer-medium {height: 4em}
+.spacer-small {height: 2em}
 
 /* TYPOGRAPHY */
 .monospace {
@@ -127,7 +130,7 @@ p {
     max-width: 750px;
     padding:40px;
     margin:50px auto;
-    background: var(--ticket-bg);
+    background: var(--c-ticket-bg);
     position:relative;
     transform: rotate(1deg);
     box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.02),
@@ -144,7 +147,7 @@ p {
     right: 0;
     top: -5px;
     height: 16px;
-    background: radial-gradient(circle, transparent, transparent 50%, var(--ticket-bg) 50%, var(--ticket-bg) 100%) -5px -8px / 16px 16px repeat-x;
+    background: radial-gradient(circle, transparent, transparent 50%, var(--c-ticket-bg) 50%, var(--c-ticket-bg) 100%) -5px -8px / 16px 16px repeat-x;
 }
   
 .ticket::after {
@@ -154,7 +157,7 @@ p {
     right: 0;
     bottom: -5px;
     height: 16px;
-    background: radial-gradient(circle, transparent, transparent 50%, var(--ticket-bg) 50%, var(--ticket-bg) 100%) -5px 8px / 16px 16px repeat-x;
+    background: radial-gradient(circle, transparent, transparent 50%, var(--c-ticket-bg) 50%, var(--c-ticket-bg) 100%) -5px 8px / 16px 16px repeat-x;
 }
 
 .top-left{
@@ -210,6 +213,27 @@ hr{
   -ms-transform: rotate(-2deg);
   transform: rotate(-2deg);
   display:block;
+}
+
+/* IMPORTANT INFO */
+.important-info {
+    width:50vw;
+    max-width: 750px;
+    padding:40px;
+    margin:50px auto;
+    background: var(--c-letter);
+    position:relative;
+    transform: rotate(-0.5deg);
+    box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.02),
+    0px 2px 4px rgba(3, 7, 18, 0.03),
+    0px 4px 9px rgba(3, 7, 18, 0.05),
+    0px 6px 15px rgba(3, 7, 18, 0.06),
+    0px 10px 24px rgba(3, 7, 18, 0.08);
+
+    padding: 1em;
+	border: 10px solid transparent;
+	border-image: 10 repeating-linear-gradient(-45deg, #ce2727 0, #ce2727 1em, transparent 0, transparent 2em,
+	              #58a 0, #58a 3em, transparent 0, transparent 4em);
 }
 
 /* VINYL */
@@ -348,5 +372,9 @@ hr{
         max-width: 60vw;
         width: 60vw;
         padding: 40px;
+    }
+    .important-info {
+        max-width: 70vw;
+        width: 70vw;
     }
 }
