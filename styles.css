@@ -365,7 +365,8 @@ hr{
         & img {width: 80%;}
     }
     .important-info::before {
-        right: 5%;
-        width: 50%;
+        right: -30px;
+        width: 70%;
+        top: -70px;
     }
 }
