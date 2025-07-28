@@ -1,6 +1,7 @@
 :root {
     --c-text: #000000;
     --c-yellow: #ffe800;
+    --c-red: #FD685D;
     --c-ticket-bg: #ffe1ae;
     --c-letter: #cee2e3;
 }
@@ -97,8 +98,8 @@ body {
     margin-top: 1rem;
 }
 
-.spacer-big {height: 6em}
-.spacer-medium {height: 4em}
+.spacer-large {height: 10em}
+.spacer-medium {height: 6åem}
 .spacer-small {height: 2em}
 
 /* TYPOGRAPHY */
@@ -114,6 +115,10 @@ body {
     text-align: center;
 }
 
+.left {
+    text-align: left !important;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -122,6 +127,14 @@ table {
 p {
     margin: 0;
     padding: 0;
+    font-size: 1em;
+}
+
+h4 {
+    font-family: 'Roca', sans-serif;
+    font-size: 0.8em;
+    margin: 0.5em 0;
+    letter-spacing: 1px;
 }
 
 /* TICKET */
@@ -204,9 +217,10 @@ hr{
 }
 
 .ceremony-date date{
-  color:red;
+  color:var(--c-red);
   text-transform: uppercase;
   letter-spacing: 4px;
+  font-size: 1.1em;
   -moz-transform: rotate(-2deg);
   -webkit-transform: rotate(-2deg);
   -o-transform: rotate(-2deg);
@@ -217,10 +231,10 @@ hr{
 
 /* IMPORTANT INFO */
 .important-info {
-    width:50vw;
+    width:60vw;
     max-width: 750px;
-    padding:40px;
-    margin:50px auto;
+    padding:3em;
+    margin:0px auto;
     background: var(--c-letter);
     position:relative;
     transform: rotate(-0.5deg);
@@ -232,7 +246,7 @@ hr{
 
     padding: 1em;
 	border: 10px solid transparent;
-	border-image: 10 repeating-linear-gradient(-45deg, #ce2727 0, #ce2727 1em, transparent 0, transparent 2em,
+	border-image: 10 repeating-linear-gradient(-45deg, #FD685D 0, #FD685D 1em, transparent 0, transparent 2em,
 	              #58a 0, #58a 3em, transparent 0, transparent 4em);
 }
 
