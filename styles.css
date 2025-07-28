@@ -262,11 +262,12 @@ hr{
     content: '';
     position: absolute;
     /* left: 0; */
-    right: -20%;
+    right: -15%;
     top: 20px;
     transform: rotate(10deg);
     background-image: url(stamp1.svg);
     width: 30vw;
+    max-width: 300px;
     height: 15vh;
     background-repeat: no-repeat;
     mix-blend-mode: multiply;
