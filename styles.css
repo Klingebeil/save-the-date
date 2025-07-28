@@ -245,9 +245,12 @@ hr{
     0px 10px 24px rgba(3, 7, 18, 0.08);
 
     padding: 1em;
-	border: 10px solid transparent;
-	border-image: 10 repeating-linear-gradient(-45deg, #FD685D 0, #FD685D 1em, transparent 0, transparent 2em,
-	              #58a 0, #58a 3em, transparent 0, transparent 4em);
+	border: 8px solid transparent;
+	/*border-image: 10 repeating-linear-gradient(-45deg, #FD685D 0, #FD685D 1em, transparent 0, transparent 2em,
+	              #58a 0, #58a 3em, transparent 0, transparent 4em);*/
+
+    border-image: 8 repeating-linear-gradient(-45deg, #6B9192 0, #6B9192 1em, transparent 0, transparent 2em,
+	              #6B9192 0, #6B9192 3em, transparent 0, transparent 4em);
     
     & img {width: 30vw;}
 }
