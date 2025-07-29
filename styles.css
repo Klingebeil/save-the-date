@@ -85,6 +85,10 @@ body {
     margin: 1rem;
 }
 
+.mt3 {
+    margin-top: 3rem;
+}
+
 .mt2 {
     margin-top: 2rem;
 }
@@ -130,6 +134,22 @@ h4 {
     font-size: 1em;
     margin: 0.5em 0;
     letter-spacing: 1px;
+}
+
+/* LANGUAGES */
+#languages {
+    width: 25vw;
+    max-width: 300px;
+    margin: auto;
+    background-color: var(--c-letter);
+    padding: 1em 2em;
+    border-radius: 3em;
+    flex-direction: row !important;
+
+    & a {
+        color: var(--c-text);
+        text-decoration: underline;
+    }
 }
 
 /* TICKET */
