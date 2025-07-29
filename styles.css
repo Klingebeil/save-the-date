@@ -29,13 +29,7 @@ body {
     overscroll-behavior: none;
     margin: 0;
     padding: 0;
-    background-image: repeating-linear-gradient(
-        to right,
-        var(--c-yellow) 0px,
-        var(--c-yellow) 30px,
-        transparent 30px,
-        transparent 60px
-    );
+    background-image: repeating-linear-gradient(to right, var(--c-yellow) 0px, var(--c-yellow) 4vw, transparent 4vw, transparent 8vw);
     font-size: 1em;
     color: var(--c-text);
 }
