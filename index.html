@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Meike & Johannes</title>
+        <title>We‘re getting married!</title>
         <link rel="stylesheet" href="styles.css">  
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta charset="UTF-8">
@@ -122,6 +122,19 @@
             document.body.addEventListener('pointerdown', e => {
                 shootParticles(e.clientX, e.clientY);
                 // Kein preventDefault, kein stopPropagation!
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const original = " Meike & Johannes ⋆˚✿˖° We‘re getting married! ˖°✿˚⋆ ";
+                let scrollText = [...original]; // spread into array of grapheme-aware characters
+                const scrollSpeed = 300; // ms
+
+                function scrollTitle() {
+                    scrollText.push(scrollText.shift()); // move first char to end
+                    document.title = scrollText.join('');
+                }
+
+                setInterval(scrollTitle, scrollSpeed);
             });
         </script>
     </body>
