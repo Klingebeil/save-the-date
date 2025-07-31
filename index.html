@@ -53,7 +53,15 @@
         <div class="spacer-large"></div>
         <div class="row m1">
             <div class="important-info left">
-                <p class="centered mt1"><img src="letter-head.svg"></p>
+                <img src="stamp1.svg" id="stamp1"/>
+                <svg style="position: absolute; width: 0; height: 0;">
+                    <filter id="filter">
+                        <feComponentTransfer>
+                        <feFuncA type="discrete" tableValues="0 1 1 1" />
+                        </feComponentTransfer>
+                    </filter>
+                </svg>
+                <p class="centered mt1"><img id="letter-head" src="letter-head.svg"></p>
                 <!--<h3 class="roca centered">Important Information</h3>-->
                 <div class="m1">
                     <hr class="mt2">
@@ -70,6 +78,7 @@
                     <p class="monospace"><a href="mailto:#">E-Mail Lisa</a></p>
                     <div class="spacer-large"></div>
                 </div>
+                <img src="stamp2.svg" id="stamp2"/>
             </div>
         </div>
         <div class="spacer-large"></div>
