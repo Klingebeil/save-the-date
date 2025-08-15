@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title>We‘re getting married!</title>
+        <link rel="stylesheet" href="styles.css">  
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta charset="UTF-8">
+        <meta lang="de">
+    </head>
+    <body>
+        <div id="header">
+            <div class="m2 row monospace">
+                <p class="p1 centered">Ohne Euch wär's nur halb so schön!</p>
+                <p class="p1 centered">We can’t say ‘I do’ without you!</p>
+                <p class="p1 centered">Nous aimerions partager ce moment avec vous&nbsp;!</p>
+            </div>
+            <div class="m2" id="logo">
+                <img src="logo.svg">
+            </div>
+            <div class="mt2 row monospace">
+                <!--<p class="p1">08.08.2026</p>-->
+                <p class="p1 centered">08.08.2026<br><br>Gut Kaltenbrunn,<br>Gmund am Tegernsee</p>
+            </div>
+        </div>
+        <div class="spacer-small"></div>
+        <div class="row monospace" id="languages">
+                <p class="p1"><a href="#">DE</a></p>
+                <p class="p1"><a href="#">EN</a></p>
+                <p class="p1"><a href="#">FR</a></p>
+            </div>
+        <div class="spacer-large"></div>
+        <div class="row m1">
+            <div class="ticket">
+                <span class="top-left monospace">20</span><span class="top-right monospace">26</span>
+                <div class="top-center roca">
+                    <span>Meike & Johannes</span>
+                </div>
+                <hr>
+                <h1 class="centered roca mt2"><a class="button" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdAPHQ0vfQtSamrINpioOFPzudQHHN1LOmOObta6MayTEOMhQ/viewform?usp=dialog">R.S.V.P.</a></h1>
+                <p class="for-the-ceremony monospace m2 font-small">&#8593;<br>Bitte bestätige hier euer Kommen<br>Für die Zeremonie und Feier.</p>
+                <p class="for-the-ceremony monospace m2 font-small">Solltest ihr es nicht schaffen, gebt uns gerne einfach kurz Bescheid!</p>
+                <span class="on-the-date monospace font-small">on the date:</span><span class="ceremony-date monospace"><date>08.08.2026</date></span>
+                <hr>
+                <!--<div class="row mt1">
+                    <p class="monospace">12:00</p>
+                    <p class="roca">Standesamt</p>
+                    <p class="monospace">Location</p>
+                </div>
+                <div class="row mt1">
+                    <p class="monospace">14:00</p>
+                    <p class="roca">Standesamt</p>
+                    <p class="monospace">Location</p>
+                </div>-->
+            </div>
+        </div>
+        <div class="spacer-large"></div>
+        <div class="row m1">
+            <div class="important-info left">
+                <img src="stamp1.svg" id="stamp1"/>
+                <svg style="position: absolute; width: 0; height: 0;">
+                    <filter id="filter">
+                        <feComponentTransfer>
+                        <feFuncA type="discrete" tableValues="0 1 1 1" />
+                        </feComponentTransfer>
+                    </filter>
+                </svg>
+                <p class="centered mt1"><img id="letter-head" src="letter-head.svg"></p>
+                <!--<h3 class="roca centered">Important Information</h3>-->
+                <div class="m1">
+                    <hr class="mt2">
+                    <h4 class="roca">DRESS CODE</h4>
+                    <p class="monospace">Wir haben keinen festen Dress Code. Kleidet euch gerne elegant sommerlich. Wir freuen uns über jeden sonnig-gelben Akzent.</p>
+                    <div class="spacer-small"></div>
+                    <hr>
+                    <h4 class="roca">HOTELS</h4>
+                    <p class="monospace">Die Hotels in Gmund könnten schon früh ausgebucht sein im August. Bitte reserviert euch rechtzeitig ein Zimmer, solltet ihr vor Ort übernachten wollen.</p>
+                    <div class="spacer-small"></div>
+                    <hr>
+                    <h4 class="roca">KONTAKT</h4>
+                    <p class="monospace">Willst du ein aktiver Teil des Programms sein?<br>Dann melde dich gerne bei Meikes Trauzeugin Lisa.</p>
+                    <p class="monospace"><a href="mailto:#">E-Mail Lisa</a></p>
+                    <div class="spacer-large"></div>
+                </div>
+                <img src="stamp2.svg" id="stamp2"/>
+            </div>
+        </div>
+        <div class="spacer-large"></div>
+        <div class="column m2" id="wrapper">
+            <div id="album">
+                <a href="https://open.spotify.com/playlist/5xnZNclTNr6mwLpzTuIZ2C?si=0fe949429f1b4afe&pt=c5e70a77088532610954ec3ce8c9a279" target="_blank" id="cover">
+                    <div id="print"></div>
+                </a>
+                <div id="vinyl">
+                    <div id="print">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="m2 monospace centered">Bitte fügen Sie so viele Songs wie du willst zur Playlist hinzu!</p>
+        <div class="spacer-medium"></div>
+
+        <script>
+            function shootParticles(x, y) {
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.left = x + 'px';
+                    particle.style.top = y + 'px';
+                    particle.style.width = '8px';
+                    particle.style.height = '8px';
+                    particle.style.borderRadius = '50%';
+                    particle.style.pointerEvents = 'none';
+                    particle.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
+                    particle.style.zIndex = 1000;
+                    document.body.appendChild(particle);
+
+                    const angle = Math.random() * 2 * Math.PI;
+                    const distance = 200 + Math.random() * 60;
+                    const dx = Math.cos(angle) * distance;
+                    const dy = Math.sin(angle) * distance;
+
+                    particle.animate([
+                        { transform: 'translate(0,0)', opacity: 1 },
+                        { transform: `translate(${dx}px,${dy}px)`, opacity: 0 }
+                    ], {
+                        duration: 700 + Math.random()*400,
+                        easing: 'cubic-bezier(.61,-0.01,.42,1.01)'
+                    });
+
+                    setTimeout(() => particle.remove(), 1000);
+                }
+            }
+
+            document.body.addEventListener('pointerdown', e => {
+                shootParticles(e.clientX, e.clientY);
+                // Kein preventDefault, kein stopPropagation!
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const original = " Meike & Johannes ⋆˚✿˖° We‘re getting married! ˖°✿˚⋆ ";
+                let scrollText = [...original]; // spread into array of grapheme-aware characters
+                const scrollSpeed = 300; // ms
+
+                function scrollTitle() {
+                    scrollText.push(scrollText.shift()); // move first char to end
+                    document.title = scrollText.join('');
+                }
+
+                setInterval(scrollTitle, scrollSpeed);
+            });
+        </script>
+    </body>
+</html>
