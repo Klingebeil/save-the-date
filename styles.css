@@ -102,6 +102,8 @@ body {
 .spacer-small {height: 2em}
 
 /* TYPOGRAPHY */
+.font-small { font-size: 0.8em;}
+
 .monospace {
     font-family: 'JetBrains Mono', monospace;
 }
@@ -208,6 +210,16 @@ h4 {
   font-family: courier;
 }
 
+.button {
+  display: inline-block;
+  padding: 0.25em 0.5em 0.2em 0.5em;
+  background-color: var(--c-red);
+  color: var(--c-ticket-bg);
+  text-decoration: none;
+  border-radius: 2em;
+  font-weight: bold;
+}
+
 hr{
   border:none;
   border-bottom:1px solid #000;
@@ -218,12 +230,10 @@ hr{
   text-align:center;
   text-transform:uppercase;
   margin-top:0;
-  font-size:0.5em;
   letter-spacing:1px;
 }
 
 .on-the-date{
-  font-size:0.5em;
   text-transform:uppercase;
   display:inline-block;
   width:30%;
