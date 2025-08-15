@@ -30,11 +30,13 @@ body {
     background-image: repeating-linear-gradient(to right, var(--c-yellow) 0px, var(--c-yellow) 4vw, transparent 4vw, transparent 8vw);
     font-size: 1em;
     color: var(--c-text);
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 #header {
     /* background-color: var(--c-yellow); */
-    width: 100vw;
+    /*width: 100vw;*/
     height: 95vh;
     display: flex;
     flex-direction: column;
@@ -138,12 +140,14 @@ h4 {
 
 /* LANGUAGES */
 #languages {
-    width: 25vw;
+    width: fit-content;
     max-width: 300px;
     margin: auto;
     background-color: var(--c-letter);
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     border-radius: 3em;
+    gap: 1em;
+    justify-content: center;
     flex-direction: row !important;
 
     box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.02),
@@ -387,6 +391,9 @@ hr{
 
 /* Media Styles */
 @media screen and (max-width: 750px) {
+    body {
+        background-image: repeating-linear-gradient(to right, var(--c-yellow) 0px, var(--c-yellow) 6vw, transparent 6vw, transparent 12vw);
+    }
     #header {
         height: 75vh;
         flex-direction: column;
@@ -397,9 +404,9 @@ hr{
         text-align: center;
     }
     .ticket {
-        max-width: 60vw;
-        width: 60vw;
-        padding: 40px;
+        max-width: 75vw;
+        width: 75vw;
+        padding: 20px;
     }
     .important-info {
         max-width: 70vw;
@@ -408,16 +415,15 @@ hr{
         & img {width: 80%;}
     }
     #stamp1 {
-        right: -30px;
+        right: -5px;
         width: 70%;
         top: -70px;
         filter: blur(0.4px) url(#filter);
     }
     #stamp2 {
-        left: -30px;
+        left: -10px;
         bottom: -150px;
         width: 70%;
         filter: blur(0.4px) url(#filter);
     }
-    #languages {width: 75vw;}
 }
