@@ -113,6 +113,7 @@ body {
 a { color: var(--c-text);}
 
 .font-small { font-size: 0.8em;}
+.font-big { font-size: 1.5em;}
 
 .monospace {
     font-family: 'JetBrains Mono', monospace;
@@ -178,8 +179,8 @@ h4 {
 
 /* TICKET */
 .ticket{
-    width:40vw;
-    padding:40px;
+    width: 30vw;
+    padding: 40px;
     margin:50px auto;
     background: var(--c-ticket-bg);
     position:relative;
