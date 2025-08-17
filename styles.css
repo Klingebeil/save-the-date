@@ -68,6 +68,14 @@ body {
     align-items: center;
 }
 
+.row-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2em;
+    align-items: center;
+}
+
 /* SPACER */
 .p2 {
     padding: 2rem;
@@ -102,6 +110,8 @@ body {
 .spacer-small {height: 2em}
 
 /* TYPOGRAPHY */
+a { color: var(--c-text);}
+
 .font-small { font-size: 0.8em;}
 
 .monospace {
@@ -118,6 +128,10 @@ body {
 
 .left {
     text-align: left !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
 
 table {
@@ -164,8 +178,7 @@ h4 {
 
 /* TICKET */
 .ticket{
-    width:50vw;
-    max-width: 750px;
+    width:40vw;
     padding:40px;
     margin:50px auto;
     background: var(--c-ticket-bg);
@@ -232,14 +245,12 @@ hr{
   text-align:center;
   text-transform:uppercase;
   margin-top:0;
-  letter-spacing:1px;
 }
 
 .on-the-date{
   text-transform:uppercase;
   display:inline-block;
   width:30%;
-  letter-spacing:2px;
   vertical-align: bottom;
 }
 
@@ -402,6 +413,12 @@ hr{
     .row {
         flex-direction: column;
         text-align: center;
+        gap: 0;
+    }
+    .row-left {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
     }
     .ticket {
         max-width: 75vw;
