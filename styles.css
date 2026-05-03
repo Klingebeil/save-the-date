@@ -126,6 +126,10 @@ a::after {content:' ↗'; font-size: 0.8em; color: var(--c-text-50)}
     font-family: 'JetBrains Mono', monospace;
 }
 
+.small {
+    font-size: 0.7em;
+}
+
 .roca {
     font-family: 'Roca', sans-serif;
 }
